@@ -20,4 +20,4 @@
             with:
               path: . # 表示将仓库根目录作为 Pages 内容
 
-          - uses: actions/deploy-pages@v4 # 确保是 v4
+          - uses: actions/deploy-pages@v1 # 确保是 v4
