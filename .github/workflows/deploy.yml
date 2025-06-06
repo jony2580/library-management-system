@@ -14,10 +14,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4 # ✅ 存在
-      - uses: actions/configure-pages@v5 # ✅ 存在
-      - uses: actions/upload-pages-artifact@v1 # ❌ 原来写 v4 是错误的
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      
+      # 尝试回退到 v3 或等待 GitHub 修复
+      - uses: actions/upload-pages-artifact@v3
         with:
-          path: . # 表示将仓库根目录作为 Pages 内容
+          path: ./build  # 替换为你的静态站点目录（如 Next.js/Vue/React 的构建输出）
 
-      - uses: actions/deploy-pages@v1 # ✅ deploy-pages 确实是 v1
+      - uses: actions/deploy-pages@v4
