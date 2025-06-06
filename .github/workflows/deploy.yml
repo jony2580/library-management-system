@@ -14,10 +14,10 @@
       deploy:
         runs-on: ubuntu-latest
         steps:
-          - uses: actions/checkout@v4
-          - uses: actions/configure-pages@v5
-          - uses: actions/upload-pages-artifact@v4
+          - uses: actions/checkout@v4 # 确保是 v4
+          - uses: actions/configure-pages@v5 # 确保是 v5
+          - uses: actions/upload-pages-artifact@v4 # 确保是 v4
             with:
-              path: .
+              path: . # 表示将仓库根目录作为 Pages 内容
 
-          - uses: actions/deploy-pages@v4
+          - uses: actions/deploy-pages@v4 # 确保是 v4
