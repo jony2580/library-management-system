@@ -1,23 +1,23 @@
-name: Deploy to GitHub Pages
+    name: Deploy to GitHub Pages
 
-on:
-  push:
-    branches:
-      - main
+    on:
+      push:
+        branches:
+          - main
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4 # 更新到 v4
-      - uses: actions/configure-pages@v4 # 更新到 v4
-      - uses: actions/upload-pages-artifact@v4 # 更新到 v4
-        with:
-          path: . # 表示将仓库根目录作为 Pages 内容
+    jobs:
+      deploy:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v4
+          - uses: actions/configure-pages@v5
+          - uses: actions/upload-pages-artifact@v4
+            with:
+              path: .
 
-      - uses: actions/deploy-pages@v4 # 更新到 v4
+          - uses: actions/deploy-pages@v4
