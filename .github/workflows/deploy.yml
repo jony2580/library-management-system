@@ -16,10 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
-      
-      # 尝试回退到 v3 或等待 GitHub 修复
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v1
         with:
-          path: ./build  # 替换为你的静态站点目录（如 Next.js/Vue/React 的构建输出）
-
-      - uses: actions/deploy-pages@v4
+          path: . # 或者 "dist"，根据你项目结构而定
+      - uses: actions/deploy-pages@v1
